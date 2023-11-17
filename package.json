@@ -1,0 +1,85 @@
+{
+  "name": "vscode-mongit",
+  "displayName": "Mongit",
+  "description": "Mongit decorate and saves data at mongo spec db.",
+  "version": "1.0.0",
+  "publisher": "mrmlnc",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.13.0"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/mrmlnc/vscode-lebab/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrmlnc/vscode-lebab"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:lebab.convert"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lebab.convert",
+        "title": "Lebab: convert JavaScript code from ES5 to ES2015"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Lebab configuration",
+      "properties": {
+        "lebab.transforms": {
+          "type": "array",
+          "default": [
+            "arg-rest",
+            "arg-spread",
+            "arrow-return",
+            "arrow",
+            "class",
+            "commonjs",
+            "default-param",
+            "destruct-param",
+            "exponent",
+            "for-each",
+            "for-of",
+            "includes",
+            "let",
+            "multi-var",
+            "no-strict",
+            "obj-method",
+            "obj-shorthand",
+            "template"
+          ],
+          "description": "Convert your old-fashioned code with a specific transformation."
+        },
+        "lebab.skipWarnings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Some transforms now generate warnings when they cannot be applied, helping you to better diagnose problems."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "tslint-config-mrmlnc": "^2.0.1",
+    "typescript": "^3.2.2",
+    "vscode": "^1.1.26"
+  },
+  "dependencies": {
+    "lebab": "^3.0.3",
+    "tslib": "^1.9.3"
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "clean": "rimraf out",
+    "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+    "compile": "tsc",
+    "build": "npm run clean && npm run compile && npm run lint",
+    "watch": "npm run clean && npm run compile -- --sourceMap --watch"
+  }
+}
