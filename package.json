@@ -9,28 +9,25 @@
     "vscode": "^1.13.0"
   },
   "icon": "icon.png",
-  "homepage": "https://github.com/mrmlnc/vscode-lebab/blob/master/README.md",
+  "homepage": "https://github.com/webandr/mongit/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrmlnc/vscode-lebab"
+    "url": "https://github.com/webandr/mongit"
   },
   "categories": [
     "Other"
-  ],
-  "activationEvents": [
-    "onCommand:lebab.convert"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "lebab.convert",
-        "title": "Lebab: convert JavaScript code from ES5 to ES2015"
+        "command": "mongit.save",
+        "title": "Mongit: proceed JavaScript code"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Lebab configuration",
+      "title": "Mongit configuration",
       "properties": {
         "lebab.transforms": {
           "type": "array",
@@ -54,9 +51,9 @@
             "obj-shorthand",
             "template"
           ],
-          "description": "Convert your old-fashioned code with a specific transformation."
+          "description": "Convert your code with a specific decorators and save to mongo db."
         },
-        "lebab.skipWarnings": {
+        "mongit.skipWarnings": {
           "type": "boolean",
           "default": true,
           "description": "Some transforms now generate warnings when they cannot be applied, helping you to better diagnose problems."

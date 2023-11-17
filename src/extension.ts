@@ -1,6 +1,6 @@
 'use strict';
 
-import * as lebab from 'lebab';
+import * as mongit from 'mongit';
 import * as vscode from 'vscode';
 
 interface IProblem {
@@ -38,7 +38,7 @@ function makeDiagnostic(problem: IProblem, stringLength: number): vscode.Diagnos
 		code: problem.type,
 		severity: vscode.DiagnosticSeverity.Warning,
 		range: getRange(line, 0, line, stringLength),
-		source: 'lebab',
+		source: 'mongit',
 		message: `${problem.msg} [${problem.type}]`
 	};
 }
@@ -54,7 +54,7 @@ function transformRange(document: vscode.TextDocument, range: vscode.Range, opti
 	};
 
 	try {
-		result = lebab.transform(text, options.transforms) as IResult;
+		result = mongit.transform(text, options.transforms) as IResult;
 	} catch (err) {
 		console.error(err as Error);
 	}
@@ -78,8 +78,8 @@ function isEmptyPrimarySelection(selections: vscode.Selection[]): boolean {
 }
 
 export function activate(context: vscode.ExtensionContext): void {
-	const command = vscode.commands.registerTextEditorCommand('lebab.convert', (textEditor) => {
-		const options = vscode.workspace.getConfiguration().get<IOptions>('lebab');
+	const command = vscode.commands.registerTextEditorCommand('mongit.save', (textEditor) => {
+		const options = vscode.workspace.getConfiguration().get<IOptions>('mongit');
 		const document = textEditor.document;
 		const selections = textEditor.selections;
 
