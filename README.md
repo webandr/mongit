@@ -2,6 +2,12 @@
 
 https://github.com/webandr/mongit 
 
+inspired by https://canonium.com/articles/creating-plugin-for-vscode-theory-and-standard-plugin
+https://stackoverflow.com/questions/55771578/cant-find-the-module-after-extension-is-installed 
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions 
+vsce package - создать инсталляц пакет
+code --install-extension vscode-mongit-1.0.0.vsix - локально установить расширение без магазина расширений
+
 ## Install
 
   * Press `F1` and select `Extensions: Install Extensions`.

@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"tslint-config-mrmlnc"
+		"tslint-config-AndreyDPererva"
 	],
 	"rules": {
 		"interface-name": false

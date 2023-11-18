@@ -2,8 +2,8 @@
   "name": "vscode-mongit",
   "displayName": "Mongit",
   "description": "Mongit decorate and saves data at mongo spec db.",
-  "version": "1.0.0",
-  "publisher": "mrmlnc",
+  "version": "1.0.1",
+  "publisher": "AndreyDPererva",
   "license": "MIT",
   "engines": {
     "vscode": "^1.13.0"
@@ -16,6 +16,9 @@
   },
   "categories": [
     "Other"
+  ],
+  "activationEvents": [
+    "onCommand:mongit.save"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -63,12 +66,12 @@
   },
   "devDependencies": {
     "tslint": "^5.12.0",
-    "tslint-config-mrmlnc": "^2.0.1",
     "typescript": "^3.2.2",
     "vscode": "^1.1.26"
   },
   "dependencies": {
     "lebab": "^3.0.3",
+    "mongit": "^0.9.1",
     "tslib": "^1.9.3"
   },
   "scripts": {
